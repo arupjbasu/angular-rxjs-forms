@@ -8,7 +8,7 @@
 <p>
   <button (click)="updateEmail()"> Click to update</button>
 </p-->
-
+<h1>REACTIVE FORMS: </h1>
 <form [formGroup] = "userProfileForm" (ngSubmit)="onSubmit()">
 
 <label>
@@ -57,3 +57,11 @@
 <button type="submit" [disabled] ="!userProfileForm.valid">Submit</button>
 
 </form>
+
+<h1> TEMPLATE DRIVEN FORMS</h1>
+MyVersion : <input typre="text" [(ngModel)] = " MyVersion">
+<p>
+
+{{MyVersion}}
+
+</p>
