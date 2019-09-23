@@ -1,4 +1,35 @@
-<hello name="{{ name }}"></hello>
+<!--label>
+  Enter Email:
+  <input type ="text" [formControl]="email">
+</label>
 <p>
-  Start editing to see some magic happen :)
+  Display value: {{email.value}}
 </p>
+<p>
+  <button (click)="updateEmail()"> Click to update</button>
+</p-->
+
+<form [formGroup] = "userProfileForm" (ngSubmit)="onSubmit()">
+
+<label>
+ First Name:
+  <input type ="text" formControlName="firstName">
+</label>
+<label>
+  <br>
+ Last Name:
+  <input type ="text" formControlName="lastName">
+</label>
+<label>
+  <br>
+ Age:
+  <input type ="text" formControlName="age">
+</label>
+<br>
+<label>
+ First Name:
+  <input type ="text" formControlName="email">
+</label>
+<button type="submit" [disabled] ="!userProfileForm.valid">Submit</button>
+
+</form>

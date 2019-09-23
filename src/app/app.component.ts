@@ -1,10 +1,36 @@
-import { Component } from '@angular/core';
-
+import { Component , OnInit } from '@angular/core';
+import 'rxjs/Rx';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Validators} from '@angular/forms';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
-  name = 'Angular';
+export class AppComponent  implements OnInit {
+userProfileForm=new FormGroup({
+  firstName :new FormControl('', Validators.required, ),
+  lastName :new FormControl('',Validators.required,),
+  age :new FormControl('', Validators.required,),
+  email:new FormControl('', Validators.email),
+
+});
+// email=new FormControl('');
+
+ //updateEmail(){
+  // this.email.setValue('arup@qafriend.com');
+// }
+onSubmit(){
+  console.warn(this.userProfileForm.value);
+  console.warn(this.userProfileForm.controls['firstName'].value);
+  console.warn(this.userProfileForm.get('firstName').value);
+  
+ }
+ ngOnInit() {
+ }
+
+ 
+
 }
+
+
