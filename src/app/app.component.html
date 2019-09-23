@@ -27,9 +27,33 @@
 </label>
 <br>
 <label>
- First Name:
+ email:
   <input type ="text" formControlName="email">
 </label>
+
+<div formGroupName="address">
+  <label>
+  <br>
+ Address1:
+  <input type ="text" formControlName="address1">
+</label>
+<label>
+  <br>
+ Address2:
+  <input type ="text" formControlName="address2">
+</label>
+<label>
+  <br>
+ PIN:
+  <input type ="text" formControlName="PIN">
+</label>
+<label>
+  <br>
+ CITY:
+  <input type ="text" formControlName="CITY">
+</label>
+
+</div>
 <button type="submit" [disabled] ="!userProfileForm.valid">Submit</button>
 
 </form>

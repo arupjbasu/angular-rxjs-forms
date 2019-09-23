@@ -13,6 +13,13 @@ userProfileForm=new FormGroup({
   lastName :new FormControl('',Validators.required,),
   age :new FormControl('', Validators.required,),
   email:new FormControl('', Validators.email),
+      address:new FormGroup({
+        address1 :new FormControl('',Validators.required,),
+        address2 :new FormControl('',Validators.required,),
+        PIN :new FormControl('',Validators.required,),
+        CITY :new FormControl('',Validators.required,),
+       })
+
 
 });
 // email=new FormControl('');
@@ -24,7 +31,7 @@ onSubmit(){
   console.warn(this.userProfileForm.value);
   console.warn(this.userProfileForm.controls['firstName'].value);
   console.warn(this.userProfileForm.get('firstName').value);
-  
+  console.warn(this.userProfileForm.get(['address','address1']).value);
  }
  ngOnInit() {
  }
