@@ -35,6 +35,7 @@ onSubmit(){
   console.warn(this.userProfileForm.get('firstName').value);
   console.warn(this.userProfileForm.get(['address','address1']).value);
   console.warn(this.userProfileForm.get('address').get('address1').value);
+  console.warn(this.userProfileForm.controls['firstName'].value);
  }
  ngOnInit() {
  }
